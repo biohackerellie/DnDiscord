@@ -1,0 +1,181 @@
+{
+    "world": {
+        "name": "Ashland",
+        "description": "A vast, haunted land of frostbitten ruins, eldritch corruption, and fading memories of civilizations long past. Once a thriving land, it has now fallen to the creeping influence of Brelgoth, the Hollow King, and the whispering presence of a greater force beyond reality.",
+        "major_regions": [
+            {
+                "name": "The Blighted Forest",
+                "description": "Once a lush woodland, now a twisted landscape where nature itself has been corrupted. The trees bleed black sap, and shadows move where no light exists. After Mira's sacrifice, the land is slowly healing, though it remains haunted by what was lost."
+            },
+            {
+                "name": "Hallowbrooke",
+                "description": "The once-proud capital of Ashland, now an abandoned ruin of shattered history. Echoes of the past flicker in the empty streets, revealing glimpses of an alternate reality where the city was never lost."
+            },
+            {
+                "name": "The Northern Desert",
+                "description": "A cracked wasteland filled with fissures into the deep unknown. The sand shifts as if whispering forgotten secrets, and lost civilizations lie buried beneath the surface."
+            },
+            {
+                "name": "The Yuan-Ti City of Ssarmok",
+                "description": "A hidden city on the western coast, untouched by the blight and ruled by the serpentfolk. Its inhabitants speak in riddles and secrets, and their Oracle holds knowledge of the Unwritten God."
+            },
+            {
+                "name": "Brelgoth\u2019s Keep",
+                "description": "A fortress frozen in time, shifting between existence and nothingness. Within its walls, reality is rewritten with every step, and the presence of something greater than the Hollow King lurks beneath the surface."
+            }
+        ]
+    },
+    "characters": {
+        "mira_siannodel": {
+            "name": "Mira Siannodel",
+            "description": "An elven princess and the daughter of Brelgoth, the Hollow King. She carried the power of the World Tree within her, and her sacrifice sealed away part of her father\u2019s influence. Her essence remains within a crystalline heart, held by Tomland.",
+            "role": "Central figure of the campaign. Her sacrifice was the catalyst for the final confrontation with Brelgoth and the players' transition into the larger battle against Vecna."
+        },
+        "brelgoth": {
+            "name": "Brelgoth, The Hollow King",
+            "description": "A lich who once ruled the elves of the World Tree. His obsession with forbidden magic led him to undeath, but in truth, he was never the master\u2014only a pawn. As he fell, he realized too late that he was being used by something far greater.",
+            "role": "The arc villain of Ashland. His defeat sets the stage for Vecna\u2019s grand design."
+        },
+        "theros_grimthane": {
+            "name": "Theros Grimthane",
+            "description": "A former ally turned harbinger of undeath. Once part of the Ember Wardens, he betrayed the party to the council and became an agent of the Hollow King. Now, he leads the undead forces marching across Ashland.",
+            "role": "A recurring antagonist, last seen leading an undead army against the players."
+        },
+        "yuan_ti_oracle": {
+            "name": "The Oracle of Ssarmok",
+            "description": "A serpentfolk mystic who speaks in riddles. She knows of the Unwritten God, though she does not call him by name. She sees glimpses of a rewritten world and offers cryptic warnings in exchange for memory.",
+            "role": "The players' first true clue toward Vecna\u2019s involvement."
+        },
+        "vecna": {
+            "name": "The Unwritten God",
+            "aliases": [
+                "The Whispering One",
+                "The Forsaken Eye",
+                "The Hand That Takes",
+                "The First and the Last"
+            ],
+            "description": "A force beyond death, beyond history. Vecna does not conquer\u2014he corrects. He does not rule\u2014he rewrites. And once he is finished, none shall know he was ever there.",
+            "role": "The true villain of the campaign."
+        }
+    },
+    "factions": {
+        "ember_wardens": {
+            "name": "The Ember Wardens",
+            "description": "A secretive group dedicated to protecting the refugees of Ashland. Once an ally to the party, they were infiltrated and partially corrupted by Theros and the Hollow King's influence."
+        },
+        "the_council_of_six": {
+            "name": "The Council of Six",
+            "description": "The ruling body of Earenville, all of whom fell under the sway of Brelgoth\u2019s influence. With their deaths, the city was purged in blightfire, leaving it empty of life."
+        }
+    },
+    "artifacts": {
+        "mira_heart": {
+            "name": "Mira\u2019s Crystalized Heart",
+            "description": "The last remnant of Mira's essence. It is the key to truly ending Brelgoth\u2019s existence, as his phylactery rewrites itself into reality each time it is destroyed.",
+            "role": "Essential to the final battle against Brelgoth."
+        },
+        "the_sword_of_kas": {
+            "name": "The Sword of Kas",
+            "description": "A cursed blade once wielded by the betrayer of Vecna himself. It demands blood and whispers to its wielder, tempting them toward destruction.",
+            "role": "A potential corruption arc for Tomland, who currently wields it."
+        }
+    },
+    "story_arcs": {
+        "ashland_arc": {
+            "name": "The Fall of the Hollow King",
+            "summary": "The players' journey from fugitives in Earenville to the final battle against Brelgoth at his keep. Mira's sacrifice and the unraveling of reality have led them toward a greater threat than they ever imagined.",
+            "key_events": [
+                {
+                    "title": "The Journey Across the Ocean",
+                    "description": "The party fled Earenville on a small fishing boat, untrained in sailing. Along the way, they discovered a mysterious lighthouse that had long been abandoned\u2014until they found signs of recent, unnatural activity."
+                },
+                {
+                    "title": "The Lighthouse Horror",
+                    "description": "Upon reaching the lighthouse, they encountered a disturbing scene\u2014evidence of sailors who had gone missing, strange writings in an unknown script, and creatures seemingly not of this world. Deep within, they faced an aberration that hinted at the greater forces influencing their fate."
+                },
+                {
+                    "title": "Arrival in Hollowbrooke",
+                    "description": "Hollowbrooke, once a proud city, was now a desolate ruin, yet strange echoes of the past flickered through the streets. The players saw glimpses of people who should have been long dead, hinting at a fractured timeline."
+                },
+                {
+                    "title": "The Butchery & The Blood Apparition",
+                    "description": "Near a Duergar encampment, Nertil discovered an in-use butchery with a steaming vat. Upon spilling its contents, a mass of blood surged forth, forming into the shape of a young girl before vanishing. The lanterns dimmed, and the players realized something unnatural was feeding on the city\u2019s corruption."
+                },
+                {
+                    "title": "The Undertaker's Graveyard",
+                    "description": "In the cemetery of Hollowbrooke, the party encountered the Undertaker, a monstrous undead being infused with the power of the blight. After a brutal fight, they emerged victorious, though they remained haunted by the encounter."
+                },
+                {
+                    "title": "The Living Woods & Mira's Burden",
+                    "description": "As they approached the elven homeland, Mira grew weaker, tormented by whispers from her father, Brelgoth. She finally revealed the truth\u2014the only way to stop him was to use the ritual dagger the party had found in the prison, but it would require her life."
+                },
+                {
+                    "title": "The Betrayal at the World Tree",
+                    "description": "The party arrived at the World Tree, expecting sanctuary among Mira\u2019s people, only to find that some among the elves had been corrupted by Brelgoth\u2019s influence. They fought against their former allies as Brelgoth\u2019s forces descended upon them."
+                },
+                {
+                    "title": "Mira\u2019s Sacrifice & The Battle for the Elven Homeland",
+                    "description": "The final battle of the Ashland Arc saw the party holding the line against overwhelming odds while Mira performed the ritual. As she completed it, her body was consumed, leaving behind only a crystalized heart. Her sacrifice purged some of the blight from the land and weakened Brelgoth\u2019s hold."
+                },
+                {
+                    "title": "The Dream of the Unraveling",
+                    "description": "Tomland experienced a vision through Mira\u2019s dying eyes, witnessing Brelgoth\u2019s final realization\u2014that he had never been the master, but the puppet of something far greater. The world itself seemed to fray, as if reality was beginning to come apart."
+                },
+                {
+                    "title": "The Journey North & The Yuan-Ti Oracle",
+                    "description": "As they journeyed north toward Brelgoth\u2019s keep, they encountered the hidden Yuan-Ti city of Ssarmok. There, they met the Oracle, who spoke of 'The Unwritten God' and the forces altering fate itself. She warned them that they were already playing into something beyond their understanding."
+                },
+                {
+                    "title": "The Cracked Wastes & The Rift Below",
+                    "description": "Crossing the shattered desert, the players found a hidden ruin beneath the sands\u2014a temple filled with ancient prophecies. One line stood out above all: 'The Eye opens. The past is undone.' They left, knowing they were running out of time."
+                },
+                {
+                    "title": "The Tower of Unwritten Fate",
+                    "description": "Brelgoth\u2019s keep was not just a fortress\u2014it was a place where time and reality had begun to collapse. The players navigated the shifting halls of memory, encountering visions of erased timelines and twisted reflections of themselves."
+                },
+                {
+                    "title": "The Final Confrontation: Brelgoth, The Hollow King",
+                    "description": "In a battle that tore at the fabric of reality, the players faced Brelgoth as he shifted between what he was, what he had become, and what he could have been. With Mira\u2019s Heart, they finally ended him\u2014but in his last moments, he laughed, realizing that he was never the true villain."
+                },
+                {
+                    "title": "The Transition to Neverwinter",
+                    "description": "As Brelgoth fell, reality shattered. The players awoke in a vast archive of unwritten history, where a hooded figure calmly recorded their fates. Before they could react, a door appeared, leading them into the streets of Neverwinter. To the world around them, they had always been mercenaries here. And worse\u2014no one remembered Ashland at all."
+                }
+            ]
+        },
+        "vecna_arc": {
+            "name": "Vecna, Eve of Ruin",
+            "summary": "The players have been transported to Neverwinter, where they now exist as mercenaries. But something is wrong\u2014history itself is being rewritten, and their past is beginning to disappear. The fight against Brelgoth was never the end\u2014it was only the beginning."
+        },
+        "escape_from_earenville": {
+            "name": "The Escape from Earenville",
+            "summary": "The party's journey from prisoners in the Frost Lord\u2019s prison to fugitives escaping the city of Earenville. Their early encounters with Mira, the council, and the Ember Wardens set the stage for the larger conflict against Brelgoth and Vecna.",
+            "key_events": [
+                {
+                    "title": "The Escape from the Frost Prison",
+                    "description": "The party united in the Frost Lord\u2019s brutal prison, discovering hints of his growing influence. They uncovered a prophecy tied to Mira Siannodel and fled into the wilderness, pursued by council forces."
+                },
+                {
+                    "title": "Arrival in Earenville",
+                    "description": "The party infiltrated the coastal city, discovering the corrupt rule of the Council of Six and their necromantic ties to the Frost Lord. They made contact with resistance members, encountered the arena champion Dwayne the Rock Golem Johnson, and began searching for Mira."
+                },
+                {
+                    "title": "The Cathedral Confrontation",
+                    "description": "After rescuing Mira, the party tracked her abductors to the Cathedral of the Fallen Angel. They battled Voren Dalren, a council cultist, and claimed a necrotic talisman before retreating from an undead beholder\u2019s riddles."
+                },
+                {
+                    "title": "Tharos\u2019 Betrayal",
+                    "description": "In a hidden chamber beneath the city, the party found proof of Tharos Grimthane\u2019s betrayal. His role in Mira\u2019s abduction became clear, and they barely escaped the council\u2019s forces."
+                },
+                {
+                    "title": "The Arena Chaos",
+                    "description": "Attempting to sabotage the arena\u2019s golem, the party accidentally triggered a citywide alarm. They narrowly escaped through the sewers as the council mobilized against them."
+                },
+                {
+                    "title": "The Flight from Earenville",
+                    "description": "The city fell silent as the council prepared for their final move. At the docks, the party confronted two council members, barely surviving a brutal battle. They discovered the Sword of Kas and a speaking stone linked to Alenessa Kaelith. As an undead army led by Theros arrived, they fled across the ocean in a tiny fishing boat."
+                }
+            ]
+        }
+    }
+}

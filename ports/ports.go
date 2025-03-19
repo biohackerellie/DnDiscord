@@ -1,4 +1,6 @@
 package ports
 
-type GPTService interface {
-}
+import (
+	"context"
+	"github.com/biohackerellie/DnDiscord/internal/models"
+)

@@ -3,15 +3,15 @@ package discord
 import (
 	"log/slog"
 
-	"github.com/biohackerellie/DnDiscord/ports"
+	"github.com/biohackerellie/DnDiscord/internal/gpt"
 )
 
 type DiscordHandler struct {
-	GptService ports.GPTService
+	GptService gpt.GPTService
 	log        *slog.Logger
 }
 
-func NewDiscordHandler(gpt ports.GPTService, log *slog.Logger) *DiscordHandler {
+func NewDiscordHandler(gpt gpt.GPTService, log *slog.Logger) *DiscordHandler {
 	return &DiscordHandler{
 		GptService: gpt,
 		log:        log,

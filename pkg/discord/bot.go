@@ -30,6 +30,38 @@ func (h *DiscordHandler) GetInteractionCreateHandler() func(s *discordgo.Session
 	}
 }
 
+func (h *DiscordHandler) handleMessage(s *discordgo.Session, m *discordgo.MessageCreate, isDM bool) {
+	// Get conversation context
+	ctxID := m.ChannelID
+	if !isDM {
+		ctxID += ":" + m.Author.ID
+	}
+
+	// Prevent concurrent processing
+	if _, loaded := h.StreamLocks.LoadOrStore(ctxID, true); loaded {
+		return
+	}
+	defer h.StreamLocks.Delete(ctxID)
+
+	history := h.getChannelHistory(ctxID)
+	history = append(history, models.ChatCompletionMessage{
+		Role:    models.ChatMessageRoleUser,
+		Content: m.Content,
+	})
+
+	recv := make(chan models.ChatCompletionStreamResponse)
+	go func() {
+		err := h.GptService.CreateChatCompletionStream(context.Background(),
+			models.ChatCompletionRequest{Messages: history}, recv)
+		if err != nil {
+			close(recv)
+		}
+	}()
+
+	h.processStreamResponse(s, m.ChannelID, recv)
+
+}
+
 func (h *DiscordHandler) handleChatCommand(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	data := i.ApplicationCommandData()
 
@@ -103,19 +135,21 @@ func (h *DiscordHandler) handleChatCommand(s *discordgo.Session, i *discordgo.In
 
 func (h *DiscordHandler) GetMessageCreateHandler() func(s *discordgo.Session, m *discordgo.MessageCreate) {
 	return func(s *discordgo.Session, m *discordgo.MessageCreate) {
-		if m.Author.ID == s.State.User.ID {
+		if m.Author.ID == s.State.User.ID || m.Interaction != nil && m.Interaction.ID != "" {
 			return
 		}
 
-		if m.Interaction != nil && m.Interaction.ID != "" {
+		if m.GuildID == "" {
+
+			h.handleDirectMessage(s, m)
 			return
 		}
-
-		if m.GuildID != "" {
-			return
+		h.memoryMu.Lock()
+		allowed := h.AllowedChannels[m.ChannelID]
+		h.memoryMu.Unlock()
+		if allowed {
+			h.handleChannelMessage(s, m)
 		}
-
-		h.handleDirectMessage(s, m)
 	}
 }
 
@@ -221,4 +255,27 @@ func (h *DiscordHandler) getChunkEndingIndex(prevWordDividerIdx, currentIdx int,
 		return prevWordDividerIdx + 1
 	}
 	return currentIdx
+}
+
+func (h *DiscordHandler) getChannelHistory(channelID string) []models.ChatCompletionMessage {
+	h.memoryMu.Lock()
+	defer h.memoryMu.Unlock()
+
+	if history, ok := h.ChannelMemory.Get(channelID); ok {
+		return history.([]models.ChatCompletionMessage)
+	}
+	return []models.ChatCompletionMessage{}
+}
+
+func (h *DiscordHandler) updateChannelHistory(channelID string, history []models.ChatCompletionMessage) {
+	h.memoryMu.Lock()
+	defer h.memoryMu.Unlock()
+	h.ChannelMemory.Add(channelID, history)
+}
+
+func (h *DiscordHandler) clearChannelHistory(channelID string) {
+	h.memoryMu.Lock()
+	defer h.memoryMu.Unlock()
+
+	h.ChannelMemory.Remove(channelID)
 }

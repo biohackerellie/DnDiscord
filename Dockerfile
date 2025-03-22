@@ -7,7 +7,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -ldflags="-s -w" -0 ./bin/bot ./cmd/main.go
+RUN go build -ldflags="-s -w" -o ./bin/bot ./cmd/main.go
 
 FROM alpine:latest
 COPY --from=builder /app/bin/bot .

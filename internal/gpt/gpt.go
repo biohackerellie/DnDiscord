@@ -16,23 +16,61 @@ type GPTService interface {
 }
 type GPTImpl struct {
 	apiKey string
+	model  string
 }
 
-func NewChatGPTService(apiKey string) GPTService {
+func NewChatGPTService(apiKey, model string) GPTService {
 	return &GPTImpl{
 		apiKey: apiKey,
+		model:  model,
 	}
 }
+
+// func InitializeFineTuning(apiKey string) (string, error) {
+// 	client := openai.NewClient(apiKey)
+// 	ctx := context.Background()
+
+// 	// Generate training data
+// 	if err := GenerateTrainingFile("conversation_training.jsonl"); err != nil {
+// 		return "", fmt.Errorf("failed to generate training file: %w", err)
+// 	}
+
+// 	// Upload training file
+// 	file, err := client.CreateFile(ctx, openai.FileRequest{
+// 		FilePath: "conversation_training.jsonl",
+// 		Purpose:  "fine-tune",
+// 	})
+// 	if err != nil {
+// 		return "", fmt.Errorf("file upload failed: %w", err)
+// 	}
+
+// 	// Start fine-tuning job
+// 	job, err := client.CreateFineTuningJob(ctx, openai.FineTuningJobRequest{
+// 		TrainingFile: file.ID,
+// 		Model:        openai.GPT4oMini20240718,
+// 	})
+// 	if err != nil {
+// 		return "", fmt.Errorf("fine-tuning failed: %w", err)
+// 	}
+
+// 	// Return final model ID
+// 	return job.FineTunedModel, nil
+// }
 
 func (s *GPTImpl) CreateChatCompletionStream(ctx context.Context,
 	req models.ChatCompletionRequest, send chan<- models.ChatCompletionStreamResponse) error {
 	defer close(send)
 
+	req.Messages = append([]models.ChatCompletionMessage{{
+		Role:    models.ChatMessageRoleSystem,
+		Content: string(BardSystemPrompt),
+	}}, req.Messages...)
 	c := openai.NewClient(s.apiKey)
 
 	chatReq := openai.ChatCompletionRequest{
-		Model:    openai.O3Mini,
-		Stream:   true,
+		Model:  s.model,
+		Stream: true,
+
 		Messages: getChatCompletionMessages(req.Messages),
 	}
 	stream, err := c.CreateChatCompletionStream(ctx, chatReq)
@@ -76,7 +114,7 @@ func (s *GPTImpl) CreateChatCompletion(ctx context.Context, req models.ChatCompl
 	resp, err := c.CreateChatCompletion(
 		ctx,
 		openai.ChatCompletionRequest{
-			Model:    openai.O3Mini,
+			Model:    s.model,
 			Messages: getChatCompletionMessages(req.Messages),
 		},
 	)

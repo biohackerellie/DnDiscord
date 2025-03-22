@@ -10,6 +10,8 @@ type Config struct {
 	BotToken        string
 	LogLevel        string
 	Env             string
+	AllowedChannels string
+	GPT_MODEL       string
 }
 
 func Load() *Config {
@@ -19,5 +21,7 @@ func Load() *Config {
 		BotToken:        os.Getenv("BOT_TOKEN"),
 		LogLevel:        os.Getenv("LOG_LEVEL"),
 		Env:             os.Getenv("APP_ENV"),
+		AllowedChannels: os.Getenv("ALLOWED_CHANNELS"),
+		GPT_MODEL:       os.Getenv("GPT_MODEL"),
 	}
 }

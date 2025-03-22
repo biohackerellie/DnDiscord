@@ -53,14 +53,15 @@ func main() {
 	cfg := config.Load()
 	logLevel := cfg.LogLevel
 	local := (cfg.Env == "development")
+	channels := strings.Split(cfg.AllowedChannels, ",")
 	logOptions := logger.LogOptions(strings.TrimSpace(strings.ToLower(logLevel)), true, local)
 	if local {
 		log = slog.New(slog.NewTextHandler(os.Stdout, logOptions))
 	} else {
 		log = slog.New(slog.NewJSONHandler(os.Stdout, logOptions))
 	}
-	chatGPTService := gpt.NewChatGPTService(cfg.OpenaiAPIKey)
-	discordHandler := discord.NewDiscordHandler(chatGPTService, log)
+	chatGPTService := gpt.NewChatGPTService(cfg.OpenaiAPIKey, cfg.GPT_MODEL)
+	discordHandler := discord.NewDiscordHandler(chatGPTService, log, channels)
 
 	dg, err := discordgo.New("Bot " + cfg.BotToken)
 	if err != nil {

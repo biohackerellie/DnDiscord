@@ -34,7 +34,7 @@
         "brelgoth": {
             "name": "Brelgoth, The Hollow King",
             "description": "A lich who once ruled the elves of the World Tree. His obsession with forbidden magic led him to undeath, but in truth, he was never the master\u2014only a pawn. As he fell, he realized too late that he was being used by something far greater.",
-            "role": "The arc villain of Ashland. His defeat sets the stage for Vecna\u2019s grand design."
+            "role": "The arc villain of Ashland. His defeat sets the stage for Redacted\u2019s grand design."
         },
         "theros_grimthane": {
             "name": "Theros Grimthane",
@@ -46,7 +46,7 @@
             "description": "A serpentfolk mystic who speaks in riddles. She knows of the Unwritten God, though she does not call him by name. She sees glimpses of a rewritten world and offers cryptic warnings in exchange for memory.",
             "role": "The players' first true clue toward Vecna\u2019s involvement."
         },
-        "vecna": {
+        "mysterious Villian": {
             "name": "The Unwritten God",
             "aliases": [
                 "The Whispering One",
@@ -54,7 +54,7 @@
                 "The Hand That Takes",
                 "The First and the Last"
             ],
-            "description": "A force beyond death, beyond history. Vecna does not conquer\u2014he corrects. He does not rule\u2014he rewrites. And once he is finished, none shall know he was ever there.",
+            "description": "A force beyond death, beyond history. Redacted does not conquer\u2014he corrects. He does not rule\u2014he rewrites. And once he is finished, none shall know he was ever there.",
             "role": "The true villain of the campaign."
         }
     },
@@ -143,13 +143,9 @@
                 }
             ]
         },
-        "vecna_arc": {
-            "name": "Vecna, Eve of Ruin",
-            "summary": "The players have been transported to Neverwinter, where they now exist as mercenaries. But something is wrong\u2014history itself is being rewritten, and their past is beginning to disappear. The fight against Brelgoth was never the end\u2014it was only the beginning."
-        },
         "escape_from_earenville": {
             "name": "The Escape from Earenville",
-            "summary": "The party's journey from prisoners in the Frost Lord\u2019s prison to fugitives escaping the city of Earenville. Their early encounters with Mira, the council, and the Ember Wardens set the stage for the larger conflict against Brelgoth and Vecna.",
+            "summary": "The party's journey from prisoners in the Frost Lord\u2019s prison to fugitives escaping the city of Earenville. Their early encounters with Mira, the council, and the Ember Wardens set the stage for the larger conflict against Brelgoth and Redacted.",
             "key_events": [
                 {
                     "title": "The Escape from the Frost Prison",

@@ -1,0 +1,7 @@
+services:
+  DNDiscord:
+    image: bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always

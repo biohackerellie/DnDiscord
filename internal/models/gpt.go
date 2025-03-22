@@ -3,9 +3,9 @@ package models
 type ChatMessageRole string
 
 const (
-	ChatMessageRoleSystem ChatMessageRole = "system"
-	ChatMessageRoleUser   ChatMessageRole = "user"
-	ChatMessageRoleBot    ChatMessageRole = "bot"
+	ChatMessageRoleSystem    ChatMessageRole = "system"
+	ChatMessageRoleUser      ChatMessageRole = "user"
+	ChatMessageRoleAssistant ChatMessageRole = "assistant"
 )
 
 type ChatCompletionMessage struct {

@@ -2,6 +2,7 @@ package discord
 
 import (
 	"fmt"
+	"slices"
 	"unicode/utf8"
 )
 
@@ -51,10 +52,5 @@ func getUserMessage(message, author string) string {
 	return fmt.Sprintf("> **%s** - <@%s>\n", message, author)
 }
 func runeMatch(r rune, runes []rune) bool {
-	for _, v := range runes {
-		if r == v {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(runes, r)
 }
